@@ -754,6 +754,10 @@ local keyboard = {
 {'• جلب النسخة الاحتياطية 𖥠 .'},
 {'• معلومات السيرفر 𖥠 .'}, 
 {'• تحديث السورس ᜱ .'}, 
+{'اوامر تحويل السورس (اخطر )'},
+{'تحويل للسورس بويكا','تحويل للسورس ماركوس'},
+{'تحويل للسورس وطن','تحويل للسورس عالمي'},
+{'مطور التحويل @hu4_yaB'},
 {'• الغاء × .'}
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
@@ -927,9 +931,33 @@ end
 
 if text == '• تحديث السورس ᜱ .' and SudoBot(msg) then 
 os.execute('rm -rf GALAXY.lua')
-os.execute('wget https://raw.githubusercontent.com/GalaxyTEEM/GALAXY/master/GALAXY.lua')
+os.execute('wget https://raw.githubusercontent.com/CowleyIQ/GALAXY/master/GALAXY.lua')
 send(msg.chat_id_, msg.id_,'✥┆ تم تحديث السورس . 𖦲 ◜')
 dofile('GALAXY.lua')  
+end
+if text == 'تحويل للسورس ماركوس' and SudoBot(msg) then 
+os.execute('rm -rf BOYKA.lua')
+os.execute('wget https://raw.githubusercontent.com/CowleyIQ/MARCOSBOT/master/BOYKA.lua')
+send(msg.chat_id_, msg.id_,'تحويل للسورس ماركوس') 
+dofile('BOYKA.lua')  
+end
+if text == 'تحويل للسورس وطن' and SudoBot(msg) then 
+os.execute('rm -rf BOYKA.lua')
+os.execute('wget https://raw.githubusercontent.com/CowleyIQ/homelandBOT‏/master/BOYKA.lua')
+send(msg.chat_id_, msg.id_,'تحويل للسورس وطن') 
+dofile('BOYKA.lua')  
+end
+if text == 'تحويل للسورس بويكا' and SudoBot(msg) then 
+os.execute('rm -rf BOYKAY.lua')
+os.execute('wget https://raw.githubusercontent.com/CowleyIQ/BOYKAY/master/BOYKAY.lua')
+send(msg.chat_id_, msg.id_,'تم تحويل الى سورس بويكا') 
+dofile('BOYKAY.lua')  
+end
+if text == 'تحويل للسورس عالمي' and SudoBot(msg) then 
+os.execute('rm -rf GLOBLA.lua')
+os.execute('wget https://raw.githubusercontent.com/CowleyIQ/GLOBLA/master/GLOBLA.lua')
+send(msg.chat_id_, msg.id_,'تحويل للسورس عالمي') 
+dofile('GLOBLA.lua')  
 end
 if text == "• وضع اسم الى البوت 𖠹 ." and SudoBot(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -2112,7 +2140,7 @@ end
 return false
 end
 os.execute('rm -rf GALAXY.lua')
-os.execute('wget https://raw.githubusercontent.com/GalaxyTEEM/GALAXY/master/GALAXY.lua')
+os.execute('wget https://raw.githubusercontent.com/CowleyIQ/GALAXY/master/GALAXY.lua')
 send(msg.chat_id_, msg.id_,'✥┆ تم تحديث السورس . 𖦲 ◜')
 dofile('GALAXY.lua')  
 end
